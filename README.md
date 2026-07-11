@@ -13,6 +13,7 @@ cmp(Expands all existing sections with more detail, Refines wording for clarity 
 Makefile all-in-one creative platform with physics engine interactions that sync up to an audio synthesis layer, triggering unique sound effects based on the intensity and frequency of physics collisions and particle bursts within the scene. The sound effects parameterize the SFX by collision intensity (relative velocity) and frequency (recent collision rate), with per-event randomization so each burst sounds unique
 
 APKG -Updates 
+
 add file reader/writer to upload/download, and input/output to file
 
 add PROGRAM FILE STRUCTURE │ ├── Release Plan │ ▼ EPIC │ ├── Features │ ▼ SPRINT │ ├── Stories │ ▼ GLOB OBJECT │ ├── Complete Source Files ├── Tests ├── Assets ├── Documentation ├── Build Config │ ▼ BUILD │ ├── Lint ├── Unit Tests ├── Integration Tests ├── Bundle │ ▼ GIT COMMIT │ ▼ PULL REQUEST │ ▼ MERGE │ ▼ RELEASE
