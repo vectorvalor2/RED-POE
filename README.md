@@ -48,7 +48,8 @@ enable interactive placement, create project library, create texture library, an
 
 CLASS RED [ Constructor &RED(&Assets(*replicate, &extract, *deduplicate));
 
-&POE << xor << cmp.(WebGL (Three.js) and the Web Audio API) << cmp.CyGlobsPythonFramework << cmp.safe-simulated-game-development-environment;
+&POE == xor << cmp.CyGlobsPythonFramework.(WebGL (Three.js) and the Web Audio API).Dictionaries/Methods().Architecture
+High-Level Flow();
 
 QUOTAS /= Searchable Objects % Interchangeable Codeblocks;]
 
