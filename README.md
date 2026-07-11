@@ -8,8 +8,7 @@
 
 #Ifndef cmp #Define cmp (Expands all existing sections with more detail, Refines wording for clarity and impact, Adds new subsections for better organization, Removes redundant content where applicable); #Endif
 
-#Ifndef Architecture #Define Architecture
-High-Level Flow
+#Ifndef Architecture #Define Architecture-High-Level-Flow
 graph TD A[CI/CD Pipeline] --> B[Sandbox Zones] B --> C[Asset Registry + Confidence Engine] C --> D[Safety Bounds & Risk Gates] D --> E[Transform Checkpoints] E --> F[Golden Ratio Layout Optimizer] F --> G[Scene Graph + Interlocking/Interlinking] G --> H[MVP Clip Space] H --> I[Risk-Gated Safe Render Output] I --> J[Active Viewport + Physics/Audio Sync] #Endif
 
 #Ifndef Dictionaries/Methods for Data/Code in BPS
@@ -48,8 +47,7 @@ enable interactive placement, create project library, create texture library, an
 
 CLASS RED [ Constructor &RED(&Assets(*replicate, &extract, *deduplicate));
 
-&POE == xor << cmp.CyGlobsPythonFramework.(WebGL (Three.js) and the Web Audio API).Dictionaries/Methods().Architecture
-High-Level Flow();
+&POE == xor << cmp.CyGlobsPythonFramework.("WebGL (Three.js) and the Web Audio API").Dictionaries/Methods().Architecture-High-Level-Flow();
 
 QUOTAS /= Searchable Objects % Interchangeable Codeblocks;]
 
