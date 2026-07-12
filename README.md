@@ -167,7 +167,7 @@ MAIN
     return 0;
 }
 ```
-/*
+
 Suggested development roadmap
 
 Rather than attempting to build every subsystem simultaneously, develop the engine in vertical slices:
@@ -189,4 +189,3 @@ Include documentation.
 Include tests where applicable.
 Build on the previous slice without breaking compatibility.
 Be production quality rather than example code.
-*/
