@@ -39,7 +39,7 @@ Cross-Layer Translation: Data/code methods optimized for performance across all 
 Safe AI Sim - AI Scene Generation (Modular),
 Safe AI Simulation Framework for High-Confidence 3D Asset Management and Rendering);
 
-POE (XOR) << CMP.CyGlobsPythonFramework.("WebGL (Three.js) and the Web Audio API").Dictionaries/Methods().File-reader/writer();
+&POE (XOR) << CMP.CyGlobsPythonFramework.("WebGL (Three.js) and the Web Audio API").Dictionaries/Methods().File-reader/writer();
 
 QUOTAS /= Searchable Objects % Interchangeable Codeblocks;]
 
