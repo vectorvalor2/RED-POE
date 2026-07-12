@@ -4,7 +4,7 @@
 
 #Using WebGL (Three.js) and the Web Audio API
 
-#Using architected code generation provisioner 
+#Using an architected code generation provisioner 
 
 Build REDPARSON GAME ENGINE: CI/CD PIPELINE||Identify Builds -> Dereference Tests -> Clarify Packages
 
