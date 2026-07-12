@@ -167,7 +167,6 @@ MAIN
     return 0;
 }
 ```
-
 Suggested development roadmap
 
 Rather than attempting to build every subsystem simultaneously, develop the engine in vertical slices:
@@ -180,7 +179,7 @@ Production: CI/CD integration, performance profiling, packaging, plugin SDK, doc
 
 This phased approach aligns closely with your proposed workflow while keeping the engine modular, testable, and extensible.
 
-One conversation = one vertical slice = one downloadable ZIP.
+One conversation = one vertical slice = one downloadable ZIP
 
 Each slice will:
 
