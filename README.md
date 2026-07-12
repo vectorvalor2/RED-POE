@@ -4,13 +4,13 @@
 
 #Using WebGL (Three.js) and the Web Audio API
 
-#Using https://github.com/vectorvalor2/CyGlobsPythonFramework.git
-
-#Using triple buffering (for rendering up to 4k resolution, from an architected code generation provisioner, that keeps the engine modular and allows different generation services to be plugged in without coupling the editor to one AI model)
+#Using architected code generation provisioner 
 
 Build REDPARSON GAME ENGINE: CI/CD PIPELINE||Identify Builds -> Dereference Tests -> Clarify Packages
 
 Build a responsive marketing landing page and make the engine dashboard adaptive, ensure the webpage layout, images, and text automatically resize, shrink, or adapt to look great on any device, from desktop monitors to smartphones
+
+Build Renderer up to 4k resolution, that keeps the engine modular and allows different generation services to be plugged in without coupling the editor to one AI model
 
 Build A robust, safety-first simulation engine designed to draw, identify, index, interlock, and interlink high-confidence / low-risk assets in 3D environments. Safe AI Sim optimizes object-to-scene composition using the golden ratio (φ ≈ 1.618) across the full graphics pipeline — from abstract class hierarchies to clip space and the active viewport
 
