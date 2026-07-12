@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REDPARSON Game Engine Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container">
+        <header id="engine-header">
+            <h1>REDPARSON ENGINE v1.0.0</h1>
+            <div id="perf-metrics">
+                <span>CPU Execution Seed: <strong id="metric-seed">0x0</strong></span>
+                <span>Active Entities: <strong id="metric-entities">0</strong></span>
+            </div>
+        </header>
+        
+        <main id="viewport-container">
+            <!-- Three.js Canvas mounts here -->
+        </main>
+
+        <footer id="engine-footer">
+            <div class="status-bar">CI/CD Integration: Active | Sandbox Zones: Secure</div>
+        </footer>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

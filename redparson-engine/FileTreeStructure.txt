@@ -1,0 +1,15 @@
+redparson-engine/
+├── index.html
+├── style.css
+├── package.json
+├── tsconfig.json
+└── src/
+    ├── main.ts
+    ├── core/
+    │   ├── red.ts
+    │   ├── poe.ts
+    │   └── ecs.ts
+    ├── simulation/
+    │   └── safe_sim.ts
+    └── tests/
+        └── engine.test.ts
