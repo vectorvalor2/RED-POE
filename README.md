@@ -6,7 +6,7 @@
 
 #Using WebGL (Three.js) and the Web Audio API
 
-Build REDPARSON GAME ENGINE: CI/CD PIPELINE||Identify Builds -> Dereference Tests -> Clarify Packages
+#Using REDPARSON GAME ENGINE: CI/CD PIPELINE||Identify Builds -> Dereference Tests -> Clarify Packages
 
 Build a responsive marketing landing page and make the engine dashboard adaptive, ensure the webpage layout, images, and text automatically resize, shrink, or adapt to look great on any device, from desktop monitors to smartphones
 
