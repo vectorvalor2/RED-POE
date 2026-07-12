@@ -2,7 +2,7 @@
 
 /3D computer graphics software suite and game engine core/
 
-#Using an architected code generation provisioner 
+#Using Architected Code Generation Provisioner 
 
 #Using WebGL (Three.js) and the Web Audio API
 
