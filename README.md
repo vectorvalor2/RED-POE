@@ -52,4 +52,4 @@ GPU, GUI -> cap to jecht to daq;
 MMU, Buckets -> Bits to Hex to Batch;]
 
 MAIN { RED(&Discernment(*CyGlobsPythonFramework), &POE, *(WebGL (Three.js) and the Web Audio API));
-/implies the intelligence to separate the high-quality from the poor, and the genuine from the fake/ RETURN 0;}
+/*implies the intelligence to separate the high-quality from the poor, and the genuine from the fake*/ RETURN 0;}
