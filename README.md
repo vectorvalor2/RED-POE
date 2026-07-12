@@ -167,7 +167,7 @@ MAIN
     return 0;
 }
 ```
-Suggested development roadmap
+/*Suggested development roadmap
 
 Rather than attempting to build every subsystem simultaneously, develop the engine in vertical slices:
 
@@ -178,3 +178,13 @@ AI Platform: Provider-agnostic code generation, scene generation, NPC behavior g
 Production: CI/CD integration, performance profiling, packaging, plugin SDK, documentation, and responsive website.
 
 This phased approach aligns closely with your proposed workflow while keeping the engine modular, testable, and extensible.
+
+One conversation = one vertical slice = one downloadable ZIP.
+
+Each slice will:
+
+Compile and run on its own.
+Include documentation.
+Include tests where applicable.
+Build on the previous slice without breaking compatibility.
+Be production quality rather than example code.*/
