@@ -20,9 +20,9 @@ Build A robust, safety-first simulation engine designed to draw, identify, index
 
 Build all-in-one creative platform with physics engine interactions that sync up to an audio synthesis layer, triggering unique sound effects based on the intensity and frequency of physics collisions and particle bursts within the scene. The sound effects parameterize the SFX by collision intensity (relative velocity) and frequency (recent collision rate), with per-event randomization so each burst sounds unique
 
-Build a scene generator to extract assets out of projects to generate 3D scenes, game levels, simulations, and particle systems to engine viewports
-
 Build an NPC behavior editor with a node-based AI scripting system
+
+Build a scene generator to extract assets out of projects to generate 3D scenes, game levels, simulations, and particle systems to engine viewports
 
 Build the sandbox in full diagram (CI/CD → sandbox zones with asset registry, safety bounds, transform checkpoints → MVP clip space → safe render output)
 
