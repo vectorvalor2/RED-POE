@@ -167,3 +167,14 @@ MAIN
     return 0;
 }
 ```
+Suggested development roadmap
+
+Rather than attempting to build every subsystem simultaneously, develop the engine in vertical slices:
+
+Foundation: Core engine, ECS, renderer, asset system, linker/preprocessor/build tools.
+Editor: Dockable UI, scene editor, drag-and-drop, project explorer, material and asset libraries.
+Simulation: Physics, audio synthesis, particle systems, and Safe AI Sim validation.
+AI Platform: Provider-agnostic code generation, scene generation, NPC behavior graphs, and validation pipeline.
+Production: CI/CD integration, performance profiling, packaging, plugin SDK, documentation, and responsive website.
+
+This phased approach aligns closely with your proposed workflow while keeping the engine modular, testable, and extensible.
