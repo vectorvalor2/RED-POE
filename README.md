@@ -2,9 +2,9 @@
 
 /3D computer graphics software suite and game engine core/
 
-#Using Architected Code Generation Provisioner 
-
 #Using WebGL (Three.js) and the Web Audio API
+
+#Using Rendering
 
 #Using REDPARSON GAME ENGINE: CI/CD PIPELINE||Identify Builds -> Dereference Tests -> Clarify Packages
 
@@ -14,7 +14,7 @@ Build object drag-drop, performance logs, and build material editor
 
 Build interactive placement, create project library, create texture library, and add performance charts
 
-Build a Renderer for up to 4k resolution, that keeps the engine modular and allows different generation services to be plugged in without coupling the editor to one AI model
+Build an architected code generation provisioner that keeps the engine modular and allows different generation services to be plugged in without coupling the editor to one AI model
 
 Build A robust, safety-first simulation engine designed to draw, identify, index, interlock, and interlink high-confidence / low-risk assets in 3D environments. Safe AI Sim optimizes object-to-scene composition using the golden ratio (φ ≈ 1.618) across the full graphics pipeline — from abstract class hierarchies to clip space and the active viewport
 
