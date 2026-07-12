@@ -167,7 +167,7 @@ MAIN
     return 0;
 }
 ```
-Suggested development roadmap
+## SUGGESTED DEVELOPMENT ROADMAP
 
 Rather than attempting to build every subsystem simultaneously, develop the engine in vertical slices:
 
@@ -197,5 +197,4 @@ HTML/CSS,
 Three.js integration,
 Build configuration,
 Documentation,
-Tests (where appropriate),
-A downloadable ZIP archive
+Tests (where appropriate), A downloadable ZIP archive
