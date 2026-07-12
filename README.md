@@ -33,7 +33,7 @@ add PROGRAM FILE STRUCTURE │ ├── Release Plan │ ▼ EPIC │ ├──
 
 add the sandbox in full diagram (CI/CD → sandbox zones with asset registry, safety bounds, transform checkpoints → MVP clip space → safe render output)
 
-add rendering and triple buffering up to 4k resolution, from an architected code generation provisioner, that keeps the engine modular and allows different generation services to be plugged in without coupling the editor to one AI model
+add triple buffering in rendering up to 4k resolution, from an architected code generation provisioner, that keeps the engine modular and allows different generation services to be plugged in without coupling the editor to one AI model
 
 add a scene generator to extract assets out of projects to generate 3D scenes, game levels, simulations, and particle systems to engine viewports
 
@@ -45,7 +45,7 @@ enable interactive placement, create project library, create texture library, an
 
 CLASS RED [ Constructor &RED(&Assets(*replicate, &extract, *deduplicate));
 
-&POE == xor << cmp.CyGlobsPythonFramework.("WebGL (Three.js) and the Web Audio API").Dictionaries/Methods().Architecture-High-Level-Flow-graph-TD();
+&POE == xor << cmp.CyGlobsPythonFramework.("WebGL (Three.js) and the Web Audio API").Dictionaries/Methods().Architecture-High-Level-Flow-Graph-TD();
 
 QUOTAS /= Searchable Objects % Interchangeable Codeblocks;]
 
