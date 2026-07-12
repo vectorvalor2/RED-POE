@@ -1,494 +1,385 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REDPARSON GAME ENGINE</title>
+    <title>REDPARSON • Safe AI 3D Game Engine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
         
         :root {
             --phi: 1.618;
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
             font-family: 'Inter', system-ui, sans-serif;
-            background: #0a0a0a;
-            color: #e0e0e0;
-            overflow-x: hidden;
         }
         
-        .landing {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+        .heading {
+            font-family: 'Space Grotesk', sans-serif;
         }
-        
-        header {
-            padding: 1.5rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(10,10,10,0.95);
+
+        .hero-bg {
+            background: radial-gradient(at center bottom, #1a1a2e 0%, #000 70%);
+        }
+
+        .glass {
+            background: rgba(255,255,255,0.05);
             backdrop-filter: blur(12px);
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
         }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            letter-spacing: -2px;
-            background: linear-gradient(90deg, #ff3366, #33ccff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        nav a {
-            color: #ccc;
-            text-decoration: none;
-            margin-left: 2rem;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        nav a:hover {
-            color: #fff;
-        }
-        
-        .hero {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            padding: 0 5%;
-            position: relative;
-        }
-        
-        .hero-content {
-            max-width: 700px;
-            z-index: 2;
-        }
-        
-        .hero h1 {
-            font-size: clamp(3rem, 8vw, 6rem);
-            line-height: 1.05;
-            margin-bottom: 1.5rem;
-        }
-        
-        .hero p {
-            font-size: 1.35rem;
-            opacity: 0.85;
-            margin-bottom: 2.5rem;
-            max-width: 500px;
-        }
-        
-        .cta {
-            padding: 16px 48px;
-            font-size: 1.2rem;
-            background: #fff;
-            color: #000;
-            border: none;
-            border-radius: 9999px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .cta:hover {
-            transform: scale(1.05);
-            background: #ff3366;
-            color: white;
-        }
-        
-        .canvas-container {
-            position: absolute;
-            right: 5%;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 45%;
-            height: 70vh;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 0 80px rgba(255, 51, 102, 0.3);
-            display: none;
-        }
-        
-        @media (min-width: 1024px) {
-            .canvas-container { display: block; }
-        }
-        
-        .dashboard {
-            display: none;
-            min-height: 100vh;
-            background: #111;
-        }
-        
-        .topbar {
-            height: 70px;
-            background: #1a1a1a;
-            display: flex;
-            align-items: center;
-            padding: 0 2rem;
-            justify-content: space-between;
-            border-bottom: 1px solid #333;
-        }
-        
-        .sidebar {
-            width: 260px;
-            background: #0f0f0f;
-            position: fixed;
-            left: 0;
-            top: 70px;
-            bottom: 0;
-            padding: 2rem 1rem;
-            overflow-y: auto;
-        }
-        
-        .main-content {
-            margin-left: 260px;
-            padding: 2rem;
-        }
-        
-        .grid {
+
+        .golden-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: calc(1rem * var(--phi));
         }
-        
-        .panel {
-            background: #1a1a1a;
-            border-radius: 16px;
-            padding: 1.5rem;
-            border: 1px solid #333;
-        }
-        
-        .resizable-canvas {
-            width: 100%;
-            max-width: 100%;
-            height: 520px;
-            background: #000;
-            border-radius: 12px;
-            position: relative;
+
+        .terminal {
+            font-family: ui-monospace, monospace;
+            background: #0a0a0a;
         }
     </style>
 </head>
-<body>
-    <!-- LANDING PAGE -->
-    <div id="landing" class="landing">
-        <header>
-            <div class="logo">REDPARSON</div>
-            <nav>
-                <a href="#" onclick="switchToDashboard()">ENGINE DASHBOARD</a>
-                <a href="#">Docs</a>
-                <a href="#">GitHub</a>
-            </nav>
-        </header>
-        
-        <div class="hero">
-            <div class="hero-content">
-                <h1>Safe AI Sim.<br>Golden Ratio Engine.</h1>
-                <p>A robust, safety-first 3D simulation engine built with Three.js + Web Audio API. Powered by high-confidence asset interlinking and φ-optimized composition.</p>
-                <button class="cta" onclick="switchToDashboard()">LAUNCH ENGINE</button>
-                <p style="margin-top: 2rem; font-size: 1rem; opacity: 0.7;">TypeScript • WebGL • Physics + Procedural Audio • Modular Code Gen</p>
+<body class="bg-black text-white overflow-x-hidden">
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-lg">
+        <div class="max-w-screen-2xl mx-auto px-8 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <div class="w-9 h-9 bg-gradient-to-br from-red-500 to-orange-500 rounded-xl flex items-center justify-center text-xl font-bold heading">R</div>
+                <div>
+                    <span class="heading text-2xl tracking-tighter font-semibold">REDPARSON</span>
+                </div>
             </div>
             
-            <div class="canvas-container" id="heroCanvasContainer">
-                <canvas id="heroCanvas" style="width:100%; height:100%;"></canvas>
+            <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                <a href="#features" class="hover:text-red-400 transition-colors">Features</a>
+                <a href="#architecture" class="hover:text-red-400 transition-colors">Architecture</a>
+                <a href="#dashboard" class="hover:text-red-400 transition-colors">Engine Dashboard</a>
+                <a href="#library" class="hover:text-red-400 transition-colors">Libraries</a>
             </div>
-        </div>
-    </div>
 
-    <!-- DASHBOARD -->
-    <div id="dashboard" class="dashboard">
-        <div class="topbar">
-            <div style="display:flex; align-items:center; gap:1rem;">
-                <div class="logo" style="font-size:1.6rem;">REDPARSON</div>
-                <div style="background:#222; padding:4px 12px; border-radius:9999px; font-size:0.9rem;">v0.1-α • SAFE MODE</div>
-            </div>
-            <div style="display:flex; gap:1rem; align-items:center;">
-                <button onclick="uploadProject()" style="padding:8px 20px; background:#333; border:none; border-radius:8px; color:white;">↑ Upload Project</button>
-                <button onclick="downloadProject()" style="padding:8px 20px; background:#ff3366; border:none; border-radius:8px; color:white;">↓ Export Build</button>
+            <div class="flex items-center gap-x-4">
+                <button onclick="toggleDashboard()" 
+                        class="px-6 py-2.5 bg-white text-black rounded-2xl font-semibold text-sm hover:bg-white/90 transition-all flex items-center gap-x-2">
+                    <i class="fa-solid fa-play"></i>
+                    <span>Launch Engine</span>
+                </button>
             </div>
         </div>
-        
-        <div class="sidebar">
-            <h3 style="padding:0 1rem; margin-bottom:1rem; color:#888;">PROJECT</h3>
-            <div onclick="selectTab(0)" class="panel" style="margin-bottom:8px; cursor:pointer;">Scene Graph</div>
-            <div onclick="selectTab(1)" class="panel" style="margin-bottom:8px; cursor:pointer;">Asset Registry</div>
-            <div onclick="selectTab(2)" class="panel" style="margin-bottom:8px; cursor:pointer;">NPC Behavior</div>
-            <div onclick="selectTab(3)" class="panel" style="margin-bottom:8px; cursor:pointer;">Material Editor</div>
-            
-            <h3 style="padding:0 1rem; margin:2rem 0 1rem; color:#888;">PERFORMANCE</h3>
-            <div id="perfPanel" class="panel" style="font-family:monospace; font-size:0.9rem;">
-                FPS: <span id="fps">142</span><br>
-                Draw Calls: <span id="draws">89</span><br>
-                Triangles: <span id="tris">124k</span>
-            </div>
-        </div>
-        
-        <div class="main-content">
-            <h1 style="margin-bottom:2rem;">REDPARSON ENGINE DASHBOARD</h1>
-            
-            <div class="grid">
-                <!-- 3D VIEWPORT -->
-                <div class="panel">
-                    <h3>Active Viewport • φ-Optimized</h3>
-                    <div id="viewport" class="resizable-canvas">
-                        <canvas id="engineCanvas" width="1200" height="520"></canvas>
-                    </div>
-                    <div style="margin-top:12px; display:flex; gap:12px; font-size:0.9rem;">
-                        <button onclick="togglePhysics()" style="flex:1; padding:10px;">Toggle Physics</button>
-                        <button onclick="generateScene()" style="flex:1; padding:10px;">AI Generate Scene</button>
-                    </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero-bg min-h-screen flex items-center pt-20">
+        <div class="max-w-screen-2xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-x-2 bg-white/10 text-white text-sm px-5 py-2 rounded-3xl border border-white/20">
+                    <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                    REDPARSON v0.8 • Safe AI Sim
                 </div>
                 
-                <!-- Scene Info -->
-                <div class="panel">
-                    <h3>High-Level Flow</h3>
-                    <pre style="background:#111; padding:1rem; border-radius:8px; font-size:0.85rem; overflow:auto; max-height:420px;">
-CI/CD → Sandbox Zones
-    ↓
-Asset Registry + Confidence Engine
-    ↓
-Safety Bounds & Transform Checkpoints
-    ↓
-Golden Ratio Layout Optimizer
-    ↓
-Scene Graph + Interlocking
-    ↓
-MVP Clip Space → Safe Render
-                    </pre>
-                    
-                    <h3 style="margin-top:1.5rem;">Tools</h3>
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
-                        <button onclick="dragDropDemo()" style="padding:12px; background:#222;">Drag & Drop Objects</button>
-                        <button onclick="openNodeEditor()" style="padding:12px; background:#222;">NPC Node Editor</button>
+                <h1 class="heading text-7xl md:text-8xl leading-none tracking-tighter font-bold">
+                    3D GAME ENGINE<br>
+                    <span class="bg-gradient-to-r from-red-400 via-orange-400 to-yellow-300 bg-clip-text text-transparent">
+                        BUILT FOR SAFETY
+                    </span>
+                </h1>
+                
+                <p class="text-xl text-gray-300 max-w-lg">
+                    WebGL + Three.js • Physics-Audio Sync • Golden Ratio Layouts • 
+                    Node-based AI • Risk-Gated Rendering
+                </p>
+
+                <div class="flex items-center gap-x-4">
+                    <button onclick="document.getElementById('dashboard').scrollIntoView({behavior:'smooth'})" 
+                            class="px-8 py-4 bg-red-600 hover:bg-red-500 transition-all rounded-3xl font-semibold text-lg flex items-center gap-x-3">
+                        <i class="fa-solid fa-cube"></i>
+                        Enter Sandbox
+                    </button>
+                    <button onclick="window.open('https://github.com', '_blank')" 
+                            class="px-8 py-4 border border-white/30 hover:border-white/60 transition-all rounded-3xl font-medium">
+                        View Source
+                    </button>
+                </div>
+
+                <div class="flex items-center gap-x-8 text-sm pt-6">
+                    <div>
+                        <div class="text-emerald-400 font-mono">99.7%</div>
+                        <div class="text-gray-400 text-xs">Asset Confidence</div>
+                    </div>
+                    <div>
+                        <div class="text-emerald-400 font-mono">4K</div>
+                        <div class="text-gray-400 text-xs">Real-time Render</div>
+                    </div>
+                    <div>
+                        <div class="text-emerald-400 font-mono">φ</div>
+                        <div class="text-gray-400 text-xs">Golden Ratio</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live 3D Preview -->
+            <div class="relative">
+                <div id="three-canvas" class="aspect-video bg-zinc-950 rounded-3xl overflow-hidden border border-white/10 shadow-2xl"></div>
+                <div class="absolute bottom-6 left-6 glass px-5 py-3 rounded-2xl text-xs flex items-center gap-x-3">
+                    <div class="flex items-center gap-x-1.5">
+                        <i class="fa-solid fa-bolt text-yellow-400"></i>
+                        <span id="fps">60</span>
+                    </div>
+                    <div class="h-3 w-px bg-white/20"></div>
+                    <span class="text-emerald-400">Safe Render Active</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="py-24 bg-zinc-950">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="text-center mb-16">
+                <h2 class="heading text-5xl font-semibold tracking-tight">Core Capabilities</h2>
+                <p class="text-gray-400 mt-3 max-w-md mx-auto">Built with safety, modularity, and the Golden Ratio at every layer.</p>
+            </div>
+
+            <div class="golden-grid">
+                <div class="glass border border-white/10 p-8 rounded-3xl group hover:border-red-500/30 transition-all">
+                    <i class="fa-solid fa-cube text-4xl text-red-400 mb-6"></i>
+                    <h3 class="text-2xl font-semibold mb-3">3D Scene Engine</h3>
+                    <p class="text-gray-400">Three.js powered viewport with drag-and-drop object placement, material editor, and real-time physics.</p>
+                </div>
+                
+                <div class="glass border border-white/10 p-8 rounded-3xl group hover:border-red-500/30 transition-all">
+                    <i class="fa-solid fa-waveform-lines text-4xl text-orange-400 mb-6"></i>
+                    <h3 class="text-2xl font-semibold mb-3">Physics + Audio Sync</h3>
+                    <p class="text-gray-400">Collision intensity and frequency drive parameterized, randomized Web Audio effects.</p>
+                </div>
+                
+                <div class="glass border border-white/10 p-8 rounded-3xl group hover:border-red-500/30 transition-all">
+                    <i class="fa-solid fa-brain text-4xl text-purple-400 mb-6"></i>
+                    <h3 class="text-2xl font-semibold mb-3">Node-based AI</h3>
+                    <p class="text-gray-400">NPC behavior editor and Safe AI Sim for high-confidence scene generation.</p>
+                </div>
+                
+                <div class="glass border border-white/10 p-8 rounded-3xl group hover:border-red-500/30 transition-all">
+                    <i class="fa-solid fa-shield-halved text-4xl text-emerald-400 mb-6"></i>
+                    <h3 class="text-2xl font-semibold mb-3">Risk-Gated Pipeline</h3>
+                    <p class="text-gray-400">Asset Registry → Safety Bounds → Transform Checkpoints → Golden Ratio Optimizer → Safe Render.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ARCHITECTURE -->
+    <section id="architecture" class="py-24 border-t border-b border-white/10">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <h2 class="heading text-5xl font-semibold tracking-tight text-center mb-12">High-Level Flow</h2>
+            
+            <div class="max-w-5xl mx-auto bg-zinc-900 border border-white/10 rounded-3xl p-10 terminal text-sm overflow-x-auto">
+                <pre class="text-emerald-300/90 font-mono leading-relaxed">
+A[CI/CD Pipeline]
+    → B[Sandbox Zones]
+    → C[Asset Registry + Confidence Engine]
+    → D[Safety Bounds &amp; Risk Gates]
+    → E[Transform Checkpoints]
+    → F[Golden Ratio Layout Optimizer (φ)]
+    → G[Scene Graph + Interlocking]
+    → H[MVP Clip Space]
+    → I[Risk-Gated Safe Render Output]
+    → J[Active Viewport + Physics/Audio Sync]
+                </pre>
+            </div>
+
+            <div class="mt-12 text-center">
+                <div class="inline-flex items-center gap-x-2 text-xs uppercase tracking-widest bg-white/5 px-6 py-3 rounded-2xl border border-white/10">
+                    <span class="text-red-400">●</span>
+                    CLASS RED + CLASS POE Architecture
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DASHBOARD PREVIEW -->
+    <section id="dashboard" class="py-24 bg-black">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="flex justify-between items-end mb-10">
+                <div>
+                    <h2 class="heading text-5xl font-semibold">Engine Dashboard</h2>
+                    <p class="text-gray-400">Adaptive • Modular • Real-time</p>
+                </div>
+                <button onclick="toggleFullDemo()" 
+                        class="text-sm flex items-center gap-x-2 hover:text-red-400">
+                    <i class="fa-solid fa-expand"></i>
+                    <span>Full Screen Demo</span>
+                </button>
+            </div>
+
+            <!-- Simulated Dashboard -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                <!-- Viewport -->
+                <div class="lg:col-span-7 bg-zinc-900 border border-white/10 rounded-3xl p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-x-3">
+                            <span class="text-xs uppercase tracking-widest bg-emerald-900 text-emerald-400 px-3 py-1 rounded-xl">Active Viewport</span>
+                        </div>
+                        <div class="flex gap-x-2">
+                            <button class="px-3 py-1 text-xs bg-white/10 rounded-xl">Wireframe</button>
+                            <button class="px-3 py-1 text-xs bg-white/10 rounded-xl">Lit</button>
+                        </div>
+                    </div>
+                    <div id="mini-three" class="aspect-video bg-black rounded-2xl border border-white/20 flex items-center justify-center relative overflow-hidden">
+                        <div class="text-center">
+                            <i class="fa-solid fa-cube text-6xl text-white/20 mb-4"></i>
+                            <p class="text-xs text-white/40">Interactive 3D Canvas (Three.js)</p>
+                            <p class="text-[10px] text-red-400 mt-1">Drag objects • Physics enabled</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Side Panels -->
+                <div class="lg:col-span-5 space-y-6">
+                    <!-- Material Editor -->
+                    <div class="glass border border-white/10 rounded-3xl p-6">
+                        <h4 class="font-semibold mb-4 flex items-center gap-x-2">
+                            <i class="fa-solid fa-palette"></i>
+                            Material Editor
+                        </h4>
+                        <div class="grid grid-cols-4 gap-3">
+                            <div class="aspect-square bg-gradient-to-br from-red-400 to-orange-500 rounded-2xl cursor-pointer hover:scale-105 transition-transform"></div>
+                            <div class="aspect-square bg-gradient-to-br from-blue-400 to-cyan-500 rounded-2xl cursor-pointer hover:scale-105 transition-transform"></div>
+                            <div class="aspect-square bg-gradient-to-br from-emerald-400 to-teal-500 rounded-2xl cursor-pointer hover:scale-105 transition-transform"></div>
+                            <div class="aspect-square bg-zinc-700 rounded-2xl flex items-center justify-center text-2xl cursor-pointer hover:scale-105 transition-transform">+</div>
+                        </div>
+                    </div>
+
+                    <!-- Performance -->
+                    <div class="glass border border-white/10 rounded-3xl p-6">
+                        <h4 class="font-semibold mb-4">Performance</h4>
+                        <div class="h-40 flex items-end gap-x-2">
+                            <div class="bg-emerald-400 w-full h-[40%] rounded-t"></div>
+                            <div class="bg-emerald-400 w-full h-[65%] rounded-t"></div>
+                            <div class="bg-emerald-400 w-full h-[85%] rounded-t"></div>
+                            <div class="bg-emerald-400 w-full h-[92%] rounded-t"></div>
+                            <div class="bg-yellow-400 w-full h-[70%] rounded-t"></div>
+                        </div>
+                        <div class="flex justify-between text-xs text-gray-400 mt-3">
+                            <div>FPS: <span class="text-white font-mono" id="dash-fps">142</span></div>
+                            <div>Draw Calls: <span class="text-white font-mono">87</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Asset Library -->
+                    <div onclick="alert('Project & Texture libraries would open here with drag-and-drop support.')" 
+                         class="glass border border-white/10 rounded-3xl p-6 cursor-pointer hover:border-white/30 transition-colors">
+                        <h4 class="font-semibold mb-3 flex items-center gap-x-2">
+                            <i class="fa-solid fa-folder-tree"></i>
+                            Project Library
+                        </h4>
+                        <div class="flex gap-3 text-xs">
+                            <div class="px-4 py-2 bg-white/5 rounded-2xl">Cube_Prototype.glb</div>
+                            <div class="px-4 py-2 bg-white/5 rounded-2xl">NPC_Patrol.ai</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- WORKFLOW -->
+    <section class="py-24 bg-zinc-950">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <h2 class="heading text-4xl font-semibold text-center mb-12">CI/CD → Safe Release Pipeline</h2>
+            <div class="max-w-4xl mx-auto text-sm font-mono leading-loose text-center text-gray-300">
+                PROGRAM → EPIC → SPRINT → GLOB OBJECT → BUILD → GIT COMMIT → PULL REQUEST → MERGE → RELEASE
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-white/10 py-12">
+        <div class="max-w-screen-2xl mx-auto px-8 text-center text-xs text-gray-500">
+            REDPARSON Game Engine Core • Powered by WebGL (Three.js) + Web Audio API<br>
+            Safe AI Simulation Framework • Golden Ratio Optimized
+        </div>
+    </footer>
 
     <script>
-        // ==================== THREE.JS ENGINE CORE ====================
-        let scene, camera, renderer;
-        let objects = [];
-        let audioContext;
-        let physicsEnabled = true;
+        // Tailwind script already loaded via CDN
         
-        function initEngine() {
-            const canvas = document.getElementById('engineCanvas');
-            renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
-            renderer.setSize(1200, 520);
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-            renderer.shadowMap.enabled = true;
-            
-            scene = new THREE.Scene();
-            scene.background = new THREE.Color(0x0a0a0a);
-            
-            camera = new THREE.PerspectiveCamera(60, 1200/520, 0.1, 1000);
-            camera.position.set(8, 6, 12);
-            camera.lookAt(0, 0, 0);
-            
-            // Lighting - Golden ratio inspired
-            const ambient = new THREE.AmbientLight(0xaaaaaa, 0.6);
-            scene.add(ambient);
-            
-            const dirLight = new THREE.DirectionalLight(0xffeecc, 1.1);
-            dirLight.position.set(10, 15, 8);
-            dirLight.castShadow = true;
-            scene.add(dirLight);
-            
-            // Ground
-            const groundGeo = new THREE.PlaneGeometry(40, 40);
-            const groundMat = new THREE.MeshStandardMaterial({ color: 0x222222 });
-            const ground = new THREE.Mesh(groundGeo, groundMat);
-            ground.rotation.x = -Math.PI / 2;
-            ground.receiveShadow = true;
-            scene.add(ground);
-            
-            // Initial objects
-            addTestObjects();
-            
-            // Web Audio
-            audioContext = new (window.AudioContext || window.webkitAudioContext)();
-            
+        // Simple Three.js demo
+        function initThree() {
+            const container = document.getElementById('three-canvas');
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(60, container.clientWidth / container.clientHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(container.clientWidth, container.clientHeight);
+            container.appendChild(renderer.domElement);
+
+            // Cube
+            const geometry = new THREE.BoxGeometry();
+            const material = new THREE.MeshPhongMaterial({ 
+                color: 0xff4444,
+                shininess: 80
+            });
+            const cube = new THREE.Mesh(geometry, material);
+            scene.add(cube);
+
+            const light = new THREE.DirectionalLight(0xffffff, 1);
+            light.position.set(5, 5, 5);
+            scene.add(light);
+            scene.add(new THREE.AmbientLight(0x404040));
+
+            camera.position.z = 5;
+
+            let rotation = 0;
+            function animate() {
+                requestAnimationFrame(animate);
+                rotation += 0.008;
+                cube.rotation.x = rotation * 0.7;
+                cube.rotation.y = rotation;
+                renderer.render(scene, camera);
+            }
             animate();
-        }
-        
-        function addTestObjects() {
-            // Central golden ratio object
-            const box = new THREE.Mesh(
-                new THREE.BoxGeometry(2, 2, 2),
-                new THREE.MeshStandardMaterial({ color: 0xff3366, metalness: 0.7 })
-            );
-            box.position.y = 1;
-            box.castShadow = true;
-            scene.add(box);
-            objects.push(box);
-            
-            // Satellite objects
-            for (let i = 0; i < 6; i++) {
-                const sphere = new THREE.Mesh(
-                    new THREE.SphereGeometry(0.6, 32, 32),
-                    new THREE.MeshStandardMaterial({ color: 0x33ccff })
-                );
-                const angle = (i / 6) * Math.PI * 2;
-                sphere.position.set(
-                    Math.cos(angle) * 5,
-                    1.2,
-                    Math.sin(angle) * 5
-                );
-                scene.add(sphere);
-                objects.push(sphere);
-            }
-        }
-        
-        function animate() {
-            requestAnimationFrame(animate);
-            
-            // Gentle golden ratio rotation on central object
-            if (objects.length > 0) {
-                objects[0].rotation.y += 0.003;
-            }
-            
-            // Simple physics simulation
-            if (physicsEnabled) {
-                objects.forEach((obj, i) => {
-                    if (i > 0) {
-                        obj.position.y = 1.2 + Math.sin(Date.now() / 800 + i) * 0.3;
-                    }
-                });
-            }
-            
-            renderer.render(scene, camera);
-        }
-        
-        function togglePhysics() {
-            physicsEnabled = !physicsEnabled;
-            alert(physicsEnabled ? "Physics Enabled" : "Physics Paused");
-        }
-        
-        function generateScene() {
-            alert("AI Scene Generator triggered (Modular - plug in any backend).\n\nExtracting assets → Generating φ-optimized layout...");
-            // In real version: call to scene generation service
-        }
-        
-        // Audio collision SFX
-        function playCollisionSFX(intensity) {
-            if (!audioContext) return;
-            const oscillator = audioContext.createOscillator();
-            const gain = audioContext.createGain();
-            
-            oscillator.type = 'sawtooth';
-            oscillator.frequency.setValueAtTime(80 + intensity * 400, audioContext.currentTime);
-            gain.gain.value = Math.min(1, intensity * 0.8);
-            
-            oscillator.connect(gain);
-            gain.connect(audioContext.destination);
-            
-            oscillator.start();
-            gain.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.6);
-            oscillator.stop(audioContext.currentTime + 0.7);
-        }
-        
-        // ==================== UI ====================
-        function switchToDashboard() {
-            document.getElementById('landing').style.display = 'none';
-            document.getElementById('dashboard').style.display = 'block';
-            if (!scene) initEngine();
-        }
-        
-        function selectTab(n) {
-            const messages = ["Scene Graph opened", "Asset Registry loaded", "Node-based NPC Editor ready", "Material Editor active"];
-            alert(messages[n]);
-        }
-        
-        function uploadProject() {
-            const input = document.createElement('input');
-            input.type = 'file';
-            input.accept = '.json,.glb,.gltf';
-            input.onchange = e => {
-                alert("Project loaded: " + e.target.files[0].name + "\nAssets indexed into Confidence Engine.");
-            };
-            input.click();
-        }
-        
-        function downloadProject() {
-            alert("Exporting build...\nTriple-buffered • Up to 4K • Safety gates applied.");
-            // Would trigger real download in full version
-        }
-        
-        function dragDropDemo() {
-            alert("Drag & Drop enabled.\nObjects can now be placed interactively in viewport.");
-        }
-        
-        function openNodeEditor() {
-            alert("NPC Behavior Node Editor opened.\nVisual scripting system active.");
-        }
-        
-        // Hero canvas demo
-        let heroScene, heroCamera, heroRenderer;
-        function initHeroCanvas() {
-            const canvas = document.getElementById('heroCanvas');
-            heroRenderer = new THREE.WebGLRenderer({ canvas, antialias: true });
-            heroRenderer.setSize(600, 500);
-            
-            heroScene = new THREE.Scene();
-            heroScene.background = new THREE.Color(0x111111);
-            
-            heroCamera = new THREE.PerspectiveCamera(50, 600/500, 0.1, 100);
-            heroCamera.position.set(0, 3, 10);
-            
-            const light = new THREE.PointLight(0xffffff, 2, 100);
-            light.position.set(5, 8, 10);
-            heroScene.add(light);
-            
-            const cube = new THREE.Mesh(
-                new THREE.BoxGeometry(3, 3, 3),
-                new THREE.MeshPhongMaterial({ color: 0xff3366 })
-            );
-            heroScene.add(cube);
-            
-            function heroAnim() {
-                requestAnimationFrame(heroAnim);
-                cube.rotation.y += 0.008;
-                heroRenderer.render(heroScene, heroCamera);
-            }
-            heroAnim();
-        }
-        
-        // Responsive handling
-        window.addEventListener('resize', () => {
-            if (renderer) {
-                const container = document.getElementById('viewport');
-                const w = Math.min(container.clientWidth, 1200);
-                renderer.setSize(w, 520);
-            }
-        });
-        
-        // Init
-        window.onload = () => {
-            initHeroCanvas();
-            
-            // Simulate FPS
+
+            // FPS counter
+            let frame = 0, lastTime = Date.now();
             setInterval(() => {
-                const fpsEl = document.getElementById('fps');
-                if (fpsEl) fpsEl.textContent = Math.floor(110 + Math.random() * 60);
-            }, 1200);
+                const now = Date.now();
+                const fps = Math.round(frame * 1000 / (now - lastTime));
+                document.getElementById('fps').textContent = fps || 60;
+                frame = 0;
+                lastTime = now;
+            }, 1000);
+            
+            setInterval(() => frame++, 16);
+        }
+
+        // Dashboard FPS
+        function simulateDashboard() {
+            let fps = 142;
+            setInterval(() => {
+                fps = Math.max(90, Math.floor(142 + Math.random() * 30 - 15));
+                const el = document.getElementById('dash-fps');
+                if (el) el.textContent = fps;
+            }, 1800);
+        }
+
+        function toggleDashboard() {
+            document.getElementById('dashboard').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function toggleFullDemo() {
+            alert("Full engine demo would open here.\n\nIn production this would be a complete WebGL editor with:\n• Drag & drop objects\n• Node-based AI scripting\n• Material & texture libraries\n• Real-time physics + audio sync");
+        }
+
+        // Initialize everything
+        window.onload = function() {
+            initThree();
+            simulateDashboard();
+            
+            // Keyboard hint
+            console.log('%cREDPARSON Engine Ready. Press "S" for sandbox.', 'color:#f33; font-family:monospace');
         };
-        
-        // Expose some globals for console experimentation
-        console.log("%cREDPARSON ENGINE LOADED - TypeScript / Three.js Ready", "color:#ff3366; font-size:14px;");
-        console.log("Try: playCollisionSFX(0.8)");
     </script>
 </body>
 </html>
