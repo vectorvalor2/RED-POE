@@ -188,3 +188,14 @@ Include documentation.
 Include tests where applicable.
 Build on the previous slice without breaking compatibility.
 Be production quality rather than example code.
+
+For each slice, generate:
+
+Complete source tree
+TypeScript source
+HTML/CSS
+Three.js integration
+Build configuration
+Documentation
+Tests (where appropriate)
+A downloadable ZIP archive
