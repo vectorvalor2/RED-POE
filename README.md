@@ -2,9 +2,9 @@
 
 /3D computer graphics software suite and game engine core/
 
-#Using WebGL (Three.js) and the Web Audio API
-
 #Using an architected code generation provisioner 
+
+#Using WebGL (Three.js) and the Web Audio API
 
 Build REDPARSON GAME ENGINE: CI/CD PIPELINE||Identify Builds -> Dereference Tests -> Clarify Packages
 
