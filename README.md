@@ -122,7 +122,7 @@ RED(&Detach(*replicate, &extract, *deduplicate));
 &POE (XOR) << CMP.CyGlobsPythonFramework("WebGL (Three.js) and the Web Audio API").Dictionaries/Methods(Identify Builds → Dereference Tests → Clarify Packages)
 ```
 
-**Quotas**
+### Quotas
 
 ```
 Searchable Objects ÷ Interchangeable Code Blocks
