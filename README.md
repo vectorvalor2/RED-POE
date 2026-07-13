@@ -6,8 +6,6 @@
 
 ### Using REDPARSON Game Engine: CI/CD Pipeline
 
-**Identify Builds → Dereference Tests → Clarify Packages**
-
 Build a responsive marketing landing page and make the engine dashboard adaptive. Ensure the webpage layout, images, and text automatically resize, scale, and adapt to look great on any device, from desktop monitors to smartphones.
 
 Build object drag-and-drop functionality, performance logging, and a material editor with interactive placement. Create a project library, build a texture library, and add performance charts.
@@ -114,8 +112,7 @@ RED(&Detach(*replicate, &extract, *deduplicate));
 &POE (XOR)
     << CMP.CyGlobsPythonFramework
         .("WebGL (Three.js) and the Web Audio API")
-        .Dictionaries/Methods()
-        .FileReaderWriter();
+        .Dictionaries/Methods(Identify Builds → Dereference Tests → Clarify Packages)
 ```
 
 **Quotas**
