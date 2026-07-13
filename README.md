@@ -173,7 +173,7 @@ MAIN
 ```
 ## SUGGESTED DEVELOPMENT ROADMAP
 
-Build Subsystems:
+Implement Subsystems:
 
 Foundation: Core engine, ECS, renderer, asset system, linker/preprocessor/build tools.
 Editor: Dockable UI, scene editor, drag-and-drop, project explorer, material and asset libraries.
