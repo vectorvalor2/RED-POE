@@ -38,7 +38,7 @@ An NPC behavior editor with a node-based AI scripting system, along with scene g
 │
 ▼ |
 
-Integrate the Safe AI Engine sandbox into a complete architecture diagram:
+Integrate the Safe AI Engine sandbox into a complete architectural diagram:
 
 │
 ▼ |
