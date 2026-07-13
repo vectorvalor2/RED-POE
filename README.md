@@ -169,7 +169,7 @@ MAIN
 ```
 ## SUGGESTED DEVELOPMENT ROADMAP
 
-Rather than attempting to build every subsystem simultaneously, develop the engine in vertical slices:
+Build Subsystems:
 
 Foundation: Core engine, ECS, renderer, asset system, linker/preprocessor/build tools.
 Editor: Dockable UI, scene editor, drag-and-drop, project explorer, material and asset libraries.
@@ -177,19 +177,7 @@ Simulation: Physics, audio synthesis, particle systems, and Safe AI Sim validati
 AI Platform: Provider-agnostic code generation, scene generation, NPC behavior graphs, and validation pipeline.
 Production: CI/CD integration, performance profiling, packaging, plugin SDK, documentation, and responsive website.
 
-This phased approach aligns closely with your proposed workflow while keeping the engine modular, testable, and extensible.
-
-One conversation = one vertical slice = one downloadable ZIP.
-
-Each slice will:
-
-Compile and run on its own.
-Include documentation.
-Include tests where applicable.
-Build on the previous slice without breaking compatibility.
-Be production quality rather than example code.
-
-For each slice, generate:
+Generate:
 
 Complete source tree,
 TypeScript source,
