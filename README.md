@@ -13,7 +13,7 @@ A responsive marketing landing page, and make the engine dashboard adaptive, Ens
 │
 ▼ |
 
-Object drag-and-drop functionality, performance logging, and a material editor with interactive placement, Create a project library, build a texture library, and add performance charts
+Object drag-and-drop functionality, performance logging, and a material editor with interactive placement, a project library, a texture library, and add performance charts
 
 │
 ▼ |
