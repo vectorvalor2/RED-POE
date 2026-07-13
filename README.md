@@ -108,6 +108,10 @@ RED(&Detach(*replicate, &extract, *deduplicate));
 * Safe AI Sim: Modular AI scene generation.
 * Safe AI Simulation Framework for high-confidence 3D asset management and rendering.
 
+### CyGlobsPythonFramework
+
+
+
 ```
 &POE (XOR)
     << CMP.CyGlobsPythonFramework().("WebGL (Three.js) and the Web Audio API").Dictionaries/Methods(Identify Builds → Dereference Tests → Clarify Packages)
@@ -141,6 +145,29 @@ GPU, GUI
 
 MMU, Buckets
     → Bits → Hex → Batch.
+```
+
+---
+
+## CLASS CYGLOBS
+/*A lightweight Python client/server framework built around this methodology:*/
+
+```
+Constructor
+
+&CYGLOBS(Comparators, Inverse Operators, Contingency Planning, Level Of Indirection, Best Practices,
+Architecture);
+```
+
+```
+
+***METHODOLOGY FRAMEWORK ROLE***
+
+Comparators -> Validate protocol versions and payload contracts.
+Inverse Operators -> Map abstract client operations to server-side handlers.
+Contingency Planning -> Provide retries, timeouts, safe fallback envelopes, and error handling.
+Level Of Indirection -> Separate transport, protocol, service logic, configuration, and tests.
+Best Practices -> Type hints, dataclasses, Pydantic envelopes, tests, and clear entry points.
 ```
 
 ---
