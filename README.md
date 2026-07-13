@@ -11,47 +11,47 @@
 A responsive marketing landing page, and make the engine dashboard adaptive, Ensure the webpage layout, images, and text automatically resize, scale, and adapt to look great on any device, from desktop monitors to smartphones
 
 │
-▼
+▼|
 
 Object drag-and-drop functionality, performance logging, and a material editor with interactive placement, Create a project library, build a texture library, and add performance charts
 
 │
-▼
+▼|
 
 Architected code-generation provisioning capable of rendering up to 4K resolution, that keeps the engine modular and allows different generation services to be plugged in without coupling the editor to any single AI model
 
 │
-▼
+▼|
 
 A robust, safety-first AI engine designed to draw, identify, index, interlock, and interlink high-confidence, low-risk assets in 3D environments, Safe AI Engine optimizes object-to-scene composition using the Golden Ratio (φ ≈ 1.618) across the entire graphics pipeline—from abstract class hierarchies to clip space and the active viewport
 
 │
-▼
+▼|
 
 An all-in-one creative platform with physics-engine interactions synchronized to an audio synthesis layer, triggering unique sound effects based on the intensity and frequency of physics collisions and particle bursts within the scene, Parameterizing sound effects by collision intensity (relative velocity) and collision frequency (recent collision rate), with per-event randomization so each burst sounds unique
 
 │
-▼
+▼|
 
 An NPC behavior editor with a node-based AI scripting system, along with scene generation capable of extracting assets from projects to generate 3D scenes, game levels, simulations, and particle systems for engine viewports
 
 │
-▼
+▼|
 
 Integrate the Safe AI Sim sandbox into a complete architecture diagram:
 
 │
-▼
+▼|
 
 **CI/CD → Sandbox Zones → Asset Registry → Safety Bounds → Transform Checkpoints → MVP Clip Space → Safe Render Output**
 
 │
-▼
+▼|
 
 Integrate a file reader/writer capable of uploading, downloading, importing, and exporting the following workflow:
 
 │
-▼
+▼|
 
 ```
 PROGRAM
