@@ -110,9 +110,7 @@ RED(&Detach(*replicate, &extract, *deduplicate));
 
 ```
 &POE (XOR)
-    << CMP.CyGlobsPythonFramework
-        .("WebGL (Three.js) and the Web Audio API")
-        .Dictionaries/Methods(Identify Builds → Dereference Tests → Clarify Packages)
+    << CMP.CyGlobsPythonFramework().("WebGL (Three.js) and the Web Audio API").Dictionaries/Methods(Identify Builds → Dereference Tests → Clarify Packages)
 ```
 
 **Quotas**
@@ -153,9 +151,9 @@ MMU, Buckets
 MAIN
 {
     RED(
-        &Discernment(*CyGlobsPythonFramework),
+        &Discernment(*CyGlobsPythonFramework,
         &POE,
-        *(WebGL (Three.js) and the Web Audio API)
+        *Dictionaries/Methods);
     );
 
     // Implies the intelligence to separate the high-quality
