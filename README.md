@@ -202,11 +202,3 @@ MAIN
     return 0;
 }
 ```
-## SUGGESTED DEVELOPMENT ROADMAP
-
-Implement Subsystems:
-
-Foundation: Core engine, ECS, renderer, asset system, linker/preprocessor/build tools.
-Editor: Dockable UI, scene editor, drag-and-drop, project explorer, material and asset libraries, Physics, audio synthesis, particle systems, and Safe AI Engine validation.
-AI Platform: Provider-agnostic code generation, scene generation, NPC behavior graphs, and validation pipeline.
-Production: CI/CD integration, performance profiling, packaging, plugin SDK, documentation, and responsive website.
