@@ -6,21 +6,52 @@
 
 ### Using REDPARSON Game Engine: CI/CD Pipeline
 
-Build a responsive marketing landing page and make the engine dashboard adaptive. Ensure the webpage layout, images, and text automatically resize, scale, and adapt to look great on any device, from desktop monitors to smartphones.
+### Build 
 
-Build object drag-and-drop functionality, performance logging, and a material editor with interactive placement. Create a project library, build a texture library, and add performance charts.
+A responsive marketing landing page, and make the engine dashboard adaptive, Ensure the webpage layout, images, and text automatically resize, scale, and adapt to look great on any device, from desktop monitors to smartphones
 
-Build an architected code-generation provisioner capable of rendering up to 4K resolution. Keep the engine modular and allow different generation services to be plugged in without coupling the editor to any single AI model.
+│
+▼
 
-Build a robust, safety-first simulation engine designed to draw, identify, index, interlock, and interlink high-confidence, low-risk assets in 3D environments. Safe AI Sim optimizes object-to-scene composition using the Golden Ratio (φ ≈ 1.618) across the entire graphics pipeline—from abstract class hierarchies to clip space and the active viewport.
+Object drag-and-drop functionality, performance logging, and a material editor with interactive placement, Create a project library, build a texture library, and add performance charts
 
-Build an all-in-one creative platform with physics-engine interactions synchronized to an audio synthesis layer. Trigger unique sound effects based on the intensity and frequency of physics collisions and particle bursts within the scene. Parameterize sound effects by collision intensity (relative velocity) and collision frequency (recent collision rate), with per-event randomization so each burst sounds unique.
+│
+▼
 
-Build an NPC behavior editor with a node-based AI scripting system, along with a scene generator capable of extracting assets from projects to generate 3D scenes, game levels, simulations, and particle systems for engine viewports. Integrate the sandbox into a complete architecture diagram:
+Architected code-generation provisioning capable of rendering up to 4K resolution, that keeps the engine modular and allows different generation services to be plugged in without coupling the editor to any single AI model
+
+│
+▼
+
+A robust, safety-first AI engine designed to draw, identify, index, interlock, and interlink high-confidence, low-risk assets in 3D environments, Safe AI Engine optimizes object-to-scene composition using the Golden Ratio (φ ≈ 1.618) across the entire graphics pipeline—from abstract class hierarchies to clip space and the active viewport
+
+│
+▼
+
+An all-in-one creative platform with physics-engine interactions synchronized to an audio synthesis layer, triggering unique sound effects based on the intensity and frequency of physics collisions and particle bursts within the scene, Parameterizing sound effects by collision intensity (relative velocity) and collision frequency (recent collision rate), with per-event randomization so each burst sounds unique
+
+│
+▼
+
+An NPC behavior editor with a node-based AI scripting system, along with scene generation capable of extracting assets from projects to generate 3D scenes, game levels, simulations, and particle systems for engine viewports
+
+│
+▼
+
+Integrate the Safe AI Sim sandbox into a complete architecture diagram:
+
+│
+▼
 
 **CI/CD → Sandbox Zones → Asset Registry → Safety Bounds → Transform Checkpoints → MVP Clip Space → Safe Render Output**
 
-Build a file reader/writer capable of uploading, downloading, importing, and exporting the following workflow:
+│
+▼
+
+Integrate a file reader/writer capable of uploading, downloading, importing, and exporting the following workflow:
+
+│
+▼
 
 ```
 PROGRAM
@@ -176,17 +207,6 @@ MAIN
 Implement Subsystems:
 
 Foundation: Core engine, ECS, renderer, asset system, linker/preprocessor/build tools.
-Editor: Dockable UI, scene editor, drag-and-drop, project explorer, material and asset libraries.
-Simulation: Physics, audio synthesis, particle systems, and Safe AI Sim validation.
+Editor: Dockable UI, scene editor, drag-and-drop, project explorer, material and asset libraries, Physics, audio synthesis, particle systems, and Safe AI Engine validation.
 AI Platform: Provider-agnostic code generation, scene generation, NPC behavior graphs, and validation pipeline.
 Production: CI/CD integration, performance profiling, packaging, plugin SDK, documentation, and responsive website.
-
-Generate:
-
-Complete source tree,
-TypeScript source,
-HTML/CSS,
-Three.js integration,
-Build configuration,
-Documentation,
-Tests (where appropriate), A downloadable ZIP archive
