@@ -125,28 +125,28 @@ RED(&Detach(*replicate, &extract, *deduplicate));
 
 ### CMP
 
-* Expands existing sections with additional detail.
-* Refines wording for greater clarity and impact.
-* Adds new subsections for improved organization.
-* Removes redundant content where applicable.
+* Expands existing sections with additional detail
+* Refines wording for greater clarity and impact
+* Adds new subsections for improved organization
+* Removes redundant content where applicable
 
 ### Dictionaries/Methods
 
-* Structured dictionaries for Base44 encoding and decoding operations.
-* Method registry containing comprehensive repositories for data transformation and code execution.
-* Efficient Base44 conversion for optimized bitstream encoding and decoding.
-* Cross-layer translation methods optimized for performance across all architectural layers.
-* Safe AI Sim: Modular AI scene generation.
-* Safe AI Simulation Framework for high-confidence 3D asset management and rendering.
+* Structured dictionaries for Base44 encoding and decoding operations
+* Method registry containing comprehensive repositories for data transformation and code execution
+* Efficient Base44 conversion for optimized bitstream encoding and decoding
+* Cross-layer translation methods optimized for performance across all architectural layers
+* Safe AI Sim: Modular AI scene generation
+* Safe AI Simulation Framework for high-confidence 3D asset management and rendering
 
 ### CyGlobsPythonFramework
 /*A lightweight Python client/server framework built around this methodology:*/
 
-* Comparators -> Validate protocol versions and payload contracts.
-* Inverse Operators -> Map abstract client operations to server-side handlers.
-* Contingency Planning -> Provide retries, timeouts, safe fallback envelopes, and error handling.
-* Level Of Indirection -> Separate transport, protocol, service logic, configuration, and tests.
-* Best Practices -> Type hints, dataclasses, Pydantic envelopes, tests, and clear entry points.
+* Comparators -> Validate protocol versions and payload contracts
+* Inverse Operators -> Map abstract client operations to server-side handlers
+* Contingency Planning -> Provide retries, timeouts, safe fallback envelopes, and error handling
+* Level Of Indirection -> Separate transport, protocol, service logic, configuration, and tests
+* Best Practices -> Type hints, dataclasses, Pydantic envelopes, tests, and clear entry points
 
 
 ```
@@ -171,16 +171,16 @@ POE(Point of Execution);
 
 ```
 CPU, PID
-    → Random seeding to the stack.
+    → Random seeding to the stack
 
 MFT, MVP
-    → Command-line Windows statistics.
+    → Command-line Windows stat
 
 GPU, GUI
-    → Cap to Jecht → DAQ.
+    → Cap to Jecht → DAQ
 
 MMU, Buckets
-    → Bits → Hex → Batch.
+    → Bits to Hex → Batch
 ```
 
 ---
@@ -197,7 +197,7 @@ MAIN
     );
 
     // Implies the intelligence to separate the high-quality
-    // from the poor, and the genuine from the fake.
+    // from the poor, and the genuine from the fake
 
     return 0;
 }
