@@ -137,7 +137,7 @@ Random Seeds
     → inject stats
 
 
-    → 3 sub 1 is 1&1/2
+    → 3 sub 1 is 1*1/2
 
 
     → Buckets to Bits to Hex to Batch
