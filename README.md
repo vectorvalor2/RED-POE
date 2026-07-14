@@ -6,7 +6,7 @@
 
 ### Identify Builds → Dereference Tests → Clarify Packages
 
-* In A responsive marketing landing page, and make the engine dashboard adaptive, Ensure the webpage layout, images, and text automatically resize, scale, and adapt to look great on any device, from desktop monitors to smartphones
+* In a responsive marketing landing page, and make the engine dashboard adaptive, Ensure the webpage layout, images, and text automatically resize, scale, and adapt to look great on any device, from desktop monitors to smartphones
 
 
 * Object drag-and-drop functionality, performance logging, and a material editor with interactive placement, a project library, a texture library, and add performance charts
