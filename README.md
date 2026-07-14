@@ -9,18 +9,18 @@
 * In a responsive marketing landing page, make the engine dashboard adaptive, Ensure the webpage layout, images, and text automatically resize, scale, and adapt to look great on any device, from desktop monitors to smartphones
 
 
-* Object drag-and-drop functionality, performance logging, and a material editor with interactive placement, a project library, a texture library, and add performance charts
+* Add Object drag-and-drop functionality, performance logging, a material editor with interactive placement, a project library, a texture library, and performance charts
 
 
-* Architected AI code-generation provisioning capable of rendering up to 4K resolution, that keeps the engine modular and allows different AI generation services to be plugged in without coupling the editor to any single AI model
+* Add Architected AI code-generation provisioning capable of rendering up to 4K resolution, that keeps the engine modular and allows different AI generation services to be plugged in without coupling the editor to any single AI model
 
 
-* A Safe AI Game Engine that optimizes object-to-scene composition across the entire graphics pipeline—from abstract class hierarchies to clip space and the active viewport
+* Add A Safe AI Game Engine that optimizes object-to-scene composition across the entire graphics pipeline—from abstract class hierarchies to clip space and the active viewport
 
 
-* A physics-engine that interacts, and synchronizes to an audio synthesis layer, triggering unique sound effects based on the intensity and frequency of physics collisions and particle bursts within the scene, Parameterizing sound effects by collision intensity (relative velocity) and collision frequency (recent collision rate), with per-event randomization so each burst sounds unique
+* Add a physics-engine that interacts, and synchronizes to an audio synthesis layer, triggering unique sound effects based on the intensity and frequency of physics collisions and particle bursts within the scene, Parameterizing sound effects by collision intensity (relative velocity) and collision frequency (recent collision rate), with per-event randomization so each burst sounds unique
 
-* An NPC behavior editor with a node-based AI scripting system, along with AI game generation capable of extracting assets from projects to generate 3D game levels, and particle systems for engine viewports
+* Add an NPC behavior editor with a node-based AI scripting system, along with AI game generating capabilities for extracting assets in projects to generate 3D game levels, and particle systems for engine viewports
 
 
 * Integrate a Safe AI Generated Game Engine sandbox into a complete architectural diagram with a file reader/writer capable of uploading, downloading, importing, and exporting the following workflow:
