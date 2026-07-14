@@ -4,35 +4,27 @@
 
 ### Using REDPARSON Game Engine: CI/CD Pipeline
 
-### Build 
+### Identify Builds → Dereference Tests → Clarify Packages
 
-A responsive marketing landing page, and make the engine dashboard adaptive, Ensure the webpage layout, images, and text automatically resize, scale, and adapt to look great on any device, from desktop monitors to smartphones
+* A responsive marketing landing page, and make the engine dashboard adaptive, Ensure the webpage layout, images, and text automatically resize, scale, and adapt to look great on any device, from desktop monitors to smartphones
 
-▼
 
-Object drag-and-drop functionality, performance logging, and a material editor with interactive placement, a project library, a texture library, and add performance charts
+* Object drag-and-drop functionality, performance logging, and a material editor with interactive placement, a project library, a texture library, and add performance charts
 
-▼
 
-Architected AI code-generation provisioning capable of rendering up to 4K resolution, that keeps the engine modular and allows different AI generation services to be plugged in without coupling the editor to any single AI model
+* Architected AI code-generation provisioning capable of rendering up to 4K resolution, that keeps the engine modular and allows different AI generation services to be plugged in without coupling the editor to any single AI model
 
-▼
 
-A Safe AI Engine that optimizes object-to-scene composition across the entire graphics pipeline—from abstract class hierarchies to clip space and the active viewport
+* A Safe AI Game Engine that optimizes object-to-scene composition across the entire graphics pipeline—from abstract class hierarchies to clip space and the active viewport
 
-▼
 
-A physics-engine that interacts, and synchronizes to an audio synthesis layer, triggering unique sound effects based on the intensity and frequency of physics collisions and particle bursts within the scene, Parameterizing sound effects by collision intensity (relative velocity) and collision frequency (recent collision rate), with per-event randomization so each burst sounds unique
+* A physics-engine that interacts, and synchronizes to an audio synthesis layer, triggering unique sound effects based on the intensity and frequency of physics collisions and particle bursts within the scene, Parameterizing sound effects by collision intensity (relative velocity) and collision frequency (recent collision rate), with per-event randomization so each burst sounds unique
 
-▼
+* An NPC behavior editor with a node-based AI scripting system, along with AI game generation capable of extracting assets from projects to generate 3D game levels, and particle systems for engine viewports
 
-An NPC behavior editor with a node-based AI scripting system, along with game generation capable of extracting assets from projects to generate 3D game levels, and particle systems for engine viewports
 
-▼
+* Integrate a Safe AI Generated Game Engine sandbox into a complete architectural diagram with a file reader/writer capable of uploading, downloading, importing, and exporting the following workflow:
 
-Integrate a Safe AI Generated Game Engine sandbox into a complete architectural diagram with a file reader/writer capable of uploading, downloading, importing, and exporting the following workflow:
-
-▼
 
 **CI/CD → Sandbox Zones → Asset Registry → Safety Bounds → Transform Checkpoints → MVP Clip Space → Safe Render Output**
 
@@ -155,16 +147,16 @@ POE(Point of Execution);
 ```
 
 ```
-CPU, PID
+Glob
     → Random seeding to the stack
 
-MFT, MVP
-    → Command-line Windows stat
+Object
+    → Command-line Window stats
 
-GPU, GUI
-    → From 3 sub 1 and 1/2
+MVP-Matrix
+    → 3 sub 1 and 1/2
 
-MMU, Buckets
+Buckets
     → Bits to Hex → Batch
 ```
 
