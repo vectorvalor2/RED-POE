@@ -11,7 +11,8 @@ CLASS POE[ Constructor
 MVP queues the stack,
 Random Seeds inject stats,
 3 sub 1 is 1 1/2, Buckets to Bits to Hex to Batch] 
-MAIN{ RED(&Discernment(*CyGlobsPythonFramework, &POE, *Dictionaries/Methods); );
+MAIN{ 
+RED(&Discernment(*CyGlobsPythonFramework, &POE, *Dictionaries/Methods));
 /*Implies the intelligence to separate the high-quality from the poor, and the genuine from the fake*/
 return 0;}
 
