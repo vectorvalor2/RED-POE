@@ -83,3 +83,12 @@ npm install
 
 # Run development server
 npm run dev
+
+REDPARSON/
+├── src/                    # Core engine source
+├── assets/                 # 3D models, textures, audio
+├── sandbox/                # Safe AI generation environment
+├── ci-cd/                  # Pipeline configurations
+├── docs/                   # Architecture diagrams & guides
+├── tests/                  # Unit & integration tests
+└── python-framework/       # CyGlobsPythonFramework client/server
