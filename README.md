@@ -10,17 +10,10 @@ Comparators -> Validate protocol versions and payload contracts Inverse Operator
 Quotas Searchable Objects ÷ Interchangeable Code Blocks]
 CLASS POE[ Constructor
 &POE(Point of Execution); 
-MVP queues the stack
-Random Seeds  inject stats
-3 sub 1 is 1 1/2
-
-
-Buckets to Bits to Hex to Batch]
-
+MVP queues the stack,
+Random Seeds inject stats,
+3 sub 1 is 1 1/2, Buckets to Bits to Hex to Batch] 
 MAIN { RED( &Discernment(*CyGlobsPythonFramework, &POE, *Dictionaries/Methods); );
 /*Implies the intelligence to separate the high-quality from the poor, and the genuine from the fake*/
-
-return 0;
-
-}
+return 0;}
 
