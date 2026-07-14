@@ -151,13 +151,13 @@ Glob
     → Random seeding to the stack
 
 Object
-    → Command-line Window stats
+    → Command-line Window stat
 
-MVP-Matrix
-    → 3 sub 1 and 1/2
+MVP
+    → 3 sub 1&1/2
 
-Buckets
-    → Bits to Hex → Batch
+Bucket
+    → Bits → Hex → Batch
 ```
 
 ---
