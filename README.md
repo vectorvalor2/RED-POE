@@ -20,7 +20,7 @@
 
 * Add a physics-engine that interacts, and synchronizes to an audio synthesis layer, triggering unique sound effects based on the intensity and frequency of physics collisions and particle bursts within the scene, Parameterizing sound effects by collision intensity (relative velocity) and collision frequency (recent collision rate), with per-event randomization so each burst sounds unique
 
-* Add an NPC behavior editor with a node-based AI scripting system, along with AI game generating capabilities for extracting assets in projects to generate 3D game levels, and particle systems for engine viewports
+* Add an NPC behavior editor with a node-based AI scripting system, along with AI game generating capabilities in extracting assets to projects to generate 3D game levels, and particle systems for engine viewports
 
 
 * Integrate a Safe AI Generated Game Engine sandbox into a complete architectural diagram with a file reader/writer capable of uploading, downloading, importing, and exporting the following workflow:
