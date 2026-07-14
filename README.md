@@ -162,7 +162,7 @@ MFT, MVP
     → Command-line Windows stat
 
 GPU, GUI
-    → To every 3 sub 1 and 1/2
+    → From 3 sub 1 and 1/2
 
 MMU, Buckets
     → Bits to Hex → Batch
