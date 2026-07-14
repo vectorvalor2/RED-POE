@@ -15,7 +15,7 @@
 * Add Architected AI code-generation provisioning capable of rendering up to 4K resolution, that keeps the engine modular and allows different AI generation services to be plugged in without coupling the editor to any single AI model
 
 
-* Add A Safe AI Game Engine that optimizes object-to-scene composition across the entire graphics pipeline—from abstract class hierarchies to clip space and the active viewport
+* Add a Safe AI Game Engine that optimizes object-to-scene composition across the entire graphics pipeline—from abstract class hierarchies to clip space and the active viewport
 
 
 * Add a physics-engine that interacts, and synchronizes to an audio synthesis layer, triggering unique sound effects based on the intensity and frequency of physics collisions and particle bursts within the scene, Parameterizing sound effects by collision intensity (relative velocity) and collision frequency (recent collision rate), with per-event randomization so each burst sounds unique
