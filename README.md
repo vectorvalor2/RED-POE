@@ -1,4 +1,4 @@
-/*Add all the features from this script, including modular AI code generation into the full-stack website*/
+/*Add all the features, including architectural highlights, and design philosophy with Modular AI code generation in producing the RED PARSON Game Engine App for full-stack Development*/
 
 # REDPARSON Game Engine
 
