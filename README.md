@@ -1,4 +1,4 @@
-/*Add all the key features, including architecture highlights, and design philosophy, referencing Modular AI code generation, while producing the RED PARSON Game Engine*/
+/Add all the key features from this script to producing the RED PARSON Game Engine, including architecture highlights, design philosophy, and Modular AI code generation/
 
 # REDPARSON Game Engine
 
