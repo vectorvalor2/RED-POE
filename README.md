@@ -1,5 +1,3 @@
-/Add all the key features from this script to producing the RED PARSON Game Engine, including architecture highlights, design philosophy, and Modular AI code generation/
-
 # REDPARSON Game Engine
 
 **3D Computer Graphics Software Suite & Game Engine Core**
@@ -69,6 +67,6 @@ A modern, modular 3D game engine and graphics suite built with **WebGL (Three.js
 
 REDPARSON combines:
 - **Discernment** – Intelligence to separate high-quality from poor implementations
-- **Modularity** – Interchangeable components at every layer
+- **Modularity** – Interlockable, Interlinkable, and Interchangeable components at every layer
 - **Safety** – Risk gates, sandboxing, and confidence engines throughout the pipeline
 - **Performance** – From bit-level optimizations (Base44) to real-time physics/audio sync
