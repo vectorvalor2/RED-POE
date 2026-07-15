@@ -1,4 +1,4 @@
-/*Add all the key features, including architecture highlights, and design philosophy, referencing Modular AI code generation, while producing the RED PARSON Game Engine, full-stack Development WebApp*/
+/*Add all the key features, including architecture highlights, and design philosophy, referencing Modular AI code generation, while producing the RED PARSON Game Engine*/
 
 # REDPARSON Game Engine
 
